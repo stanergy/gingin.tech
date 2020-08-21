@@ -1,0 +1,18 @@
+%这是个人在线js库的hightlight.js部分
+%非盈利低流量访客可以使用
+
+/highlight.min.js	->	hightlight源文件	https://github.com/highlightjs/highlight.js/tree/master/src
+/default.min.css	->	hightlight默认样式	https://github.com/highlightjs/highlight.js/tree/master/src
+/hljs-line-enable.js	->	hightlight显示行号插件	https://github.com/wcoder/highlightjs-line-numbers.js/blob/master/src/highlightjs-line-numbers.js
+/hljs-line-expand.css	->	hightlight行号美化插件	https://blog.csdn.net/Fmuma/article/details/83063538
+
+
+%style的具体文件参考链接的文件结构，使用时不加.min
+/style			->	hightlight官方样式合集	https://github.com/highlightjs/highlight.js/tree/master/src
+
+
+%完整样例
+<link rel="stylesheet" href="//106.52.197.168/highlight.js/styles/github.css">
+<link rel="stylesheet" href="//106.52.197.168/highlight.js/hljs-line-expand.css">
+<script src="//106.52.197.168/highlight.js/highlight.min.js"></script>
+<script src="//106.52.197.168/highlight.js/hljs-line-enable.js"></script>

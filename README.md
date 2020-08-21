@@ -1,24 +1,6 @@
 # gingin.tech
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+####This is my personal page for storing some notes while studying html, this is my first page using Vue
+####You can go to  the page by click this link -> [gingin.tech](https://www.gingin.tech)
+####Or you can go to my first html page with some infomation about [Girl Cafe Gun 2](https://game.bilibili.com/sssj/) -> [咸鱼玩家](https://sssj.gingin.tech)
+# gingin.tech

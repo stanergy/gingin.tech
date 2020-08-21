@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calendar</title>
+    <script src="http://106.52.197.168/jq/2.1.4/jquery.min.js"></script>
+    <style type="text/css" id="css-main">
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        .calendar-box {
+            width: 230px;
+            height: 240px;
+            position: relative;
+            top: 40px;
+            left: 40px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: beige;
+            border-radius: 5px;
+        }
+        #date-header {
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+       #current {
+           font-size: 16px;
+       }
+        #day-header {
+            width: 100%;
+            padding: 2px 0 2px 0;
+            display: flex;
+            background: linear-gradient(to top, cornflowerblue, ghostwhite);
+            border-radius: 5px;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .day-header {
+            width: 14.2857%;
+            text-align: center;
+        }
+        #day-main {
+            width: 100%;
+            padding: 2px 0 2px 0;
+            display: flex;
+            border-radius: 5px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            font-size: 16px;
+        }
+
+    </style>
+    <script type="text/javascript" id="js-main">
+        $(function () {
+            let builder = '<style type="text/css">' +
+                '.day {' +
+                'width: 14.2857%;' +
+                'padding: 4px 0 4px 0;' +
+                'text-align: center;' +
+                'border-radius: 50%;' +
+                '}' +
+                '</style>';
+            $("#day-main").html(builder);
+            let date_ = new Date();
+            let year = date_.getFullYear(); let month = date_.getMonth(); let date = date_.getDate();
+            console.log(date);
+            let isLeap = year % 4? 1: 0;
+            let refer = [31, 28+isLeap, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let first_day = new Date(year, month, 1).getDay();
+            let d = 1;
+            for (let i = 0; i < refer[month] + first_day; i++) {
+                if ( i >= first_day) {
+                    $("#day-main").append('<div class="day">' + d + '</div>');
+                    d++;
+                } else {
+                    $("#day-main").append('<div class="day"></div>');
+                }
+            }
+            $(".day")[date-1+first_day].style.background = "lightcoral";
+            setInterval(function () {
+                date_ = new Date();
+                let current = year + '年' + (month+1) + '月' + date + '日 ' +
+                    format(date_.getHours()) + ':' +
+                    format(date_.getMinutes()) + ':' +
+                    format(date_.getSeconds());
+                $("#current").text(current);
+            }, 100);
+
+        });
+
+        function format(t) {
+            return t < 10 ? '0' + t: t;
+        }
+
+    </script>
+</head>
+<body>
+<div class="calendar-box">
+    <div id="calendar">
+        <div id="date-header">
+            <span id="current">-年-月-日 -:-:-</span>
+        </div>
+        <div id="day-header">
+            <div class="day-header">日</div>
+            <div class="day-header">一</div>
+            <div class="day-header">二</div>
+            <div class="day-header">三</div>
+            <div class="day-header">四</div>
+            <div class="day-header">五</div>
+            <div class="day-header">六</div>
+        </div>
+        <div id="day-main"></div>
+    </div>
+</div>
+</body>
+</html>
